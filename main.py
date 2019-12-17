@@ -461,26 +461,27 @@ def lockin():
 if __name__ == '__main__':
     # Try and open stores.json
     if(False):
+        pass
     # if(os.path.isfile('/tmp/stores.json')):
     #     with open('/tmp/stores.json', 'r') as f:
-            try:
-                print("Note: Opening stores.json")
-                stores = json.load(f)
-            except:
-                pass
-        try:
-            # Check to see if the stores.json file is older than 1 week.
-            # If it is, we will download a new version
-            if(stores['AsOfDate'] < (time.time() - (60 * 60 * 24 * 7))):
-                print("Note: Your stores.json file is too old, updating it..")
-                with open('/tmp/stores.json', 'wb') as f:
-                    f.write(functions.getStores())
+    #         try:
+    #             print("Note: Opening stores.json")
+    #             stores = json.load(f)
+    #         except:
+    #             pass
+    #     try:
+    #         # Check to see if the stores.json file is older than 1 week.
+    #         # If it is, we will download a new version
+    #         if(stores['AsOfDate'] < (time.time() - (60 * 60 * 24 * 7))):
+    #             print("Note: Your stores.json file is too old, updating it..")
+    #             with open('/tmp/stores.json', 'wb') as f:
+    #                 f.write(functions.getStores())
 
-                print("Note: Updating stores.json complete")
-        except:
-            # Our json file isn't what we expected, so we will download a new one.
-            with open('/tmp/stores.json', 'wb') as f:
-                f.write(functions.getStores())
+    #             print("Note: Updating stores.json complete")
+    #     except:
+    #         # Our json file isn't what we expected, so we will download a new one.
+    #         with open('/tmp/stores.json', 'wb') as f:
+    #             f.write(functions.getStores())
 
     else:
         # We have no stores.json file, so we wil download it
