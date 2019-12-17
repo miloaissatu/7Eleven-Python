@@ -39,7 +39,7 @@ import random
 # Used to set our coordinates while locking in a price
 import googlemaps
 # Used for all of our custom settings and functions
-import settings, functions
+import settings_custom as settings, functions
 # Used for the auto locking function
 from apscheduler.schedulers.background import BackgroundScheduler
 # Used to load and save details from the autolock.ini config file and import our autolocker

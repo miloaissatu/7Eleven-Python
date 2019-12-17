@@ -25,7 +25,7 @@ import pytz, datetime
 # Used for requests to the price check script and for 7-Eleven stores
 import requests, json
 # Functions used for getting the OS environments from settings.py
-import settings, os
+import settings_custom as settings, os
 # Needed for our randomly generated Device ID
 import random
 # Needed so we can set flask session variables
