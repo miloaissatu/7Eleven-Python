@@ -1,0 +1,15 @@
+runtime: python37
+#api_version: 1
+#threadsafe: true
+
+handlers:
+- url: /.*
+  script: auto
+  secure: always
+  #login: required
+
+  #libraries:
+  #- name: ssl
+  #  version: latesst
+env_variables:
+  GCS_BUCKET_NAME: 'elevenseven.appspot.com'
