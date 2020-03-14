@@ -159,9 +159,10 @@ def login():
 
             # We need the AccessToken from the response header
             #accessToken = str(returnHeaders).split("'X-AccessToken': '")
-            accessToken = re.split("'X-AccessToken': '", str(returnHeaders), flags=re.IGNORECASE)
-            accessToken = accessToken[1].split("'")
-            accessToken = accessToken[0]
+            # accessToken = re.split("'X-AccessToken': '", str(returnHeaders), flags=re.IGNORECASE)
+            # accessToken = accessToken[1].split("'")
+            # accessToken = accessToken[0]
+            accessToken = returnHeaders['x-accesstoken']
 
             # DeviceSecretToken and accountID are both needed to lock in a fuel price
             deviceSecret = returnContent['DeviceSecretToken']
@@ -400,7 +401,8 @@ def lockin():
                 return redirect(url_for('confirm'))
 
         # Now we want to lock in the maximum litres we can.
-        NumberOfLitres = int(float(session['cardBalance']) / session['LockinPrice'] * 100)
+        # NumberOfLitres = int(float(session['cardBalance']) / session['LockinPrice'] * 100)
+        NumberOfLitres = int(150)
 
         # Lets start the actual lock in process
         payload = '{"AccountId":"' + session['accountID'] + '","FuelType":"' + session['fuelType'] + '","NumberOfLitres":"' + str(NumberOfLitres) + '"}'
