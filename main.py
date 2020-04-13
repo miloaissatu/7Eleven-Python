@@ -401,7 +401,6 @@ def lockin():
                 return redirect(url_for('confirm'))
 
         # Now we want to lock in the maximum litres we can.
-        # NumberOfLitres = int(float(session['cardBalance']) / session['LockinPrice'] * 100)
         NumberOfLitres = int(150)
 
         # Lets start the actual lock in process
