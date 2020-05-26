@@ -489,6 +489,8 @@ if __name__ == '__main__':
         print("Note: No stores.json found, creating it for you.")
         with open('/tmp/stores.json', 'wb') as f:
             f.write(functions.getStores())
+        with open('/tmp/stores.json', 'r') as f:
+            stores = json.load(f)
     """
     # Check if the autolock.ini file exists, if it doesn't create it.
     if not (os.path.exists("./autolock.ini")):
