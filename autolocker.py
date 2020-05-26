@@ -157,7 +157,7 @@ def start_lockin():
         # If there is a location deal
         if(suburb):
             # Open the stores.json file so we can search it to find a store that (hopefully) matches
-            with open('./stores.json', 'r') as f:
+            with open('/tmp/stores.json', 'r') as f:
                 stores = json.load(f)
 
             # For each store in "Diffs" read the postcode

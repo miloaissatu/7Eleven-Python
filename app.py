@@ -447,8 +447,8 @@ def lockin():
 
 if __name__ == '__main__':
     # Try and open stores.json
-    if(os.path.isfile('./stores.json')):
-        with open('./stores.json', 'r') as f:
+    if(os.path.isfile('/tmp/stores.json')):
+        with open('/tmp/stores.json', 'r') as f:
             try:
                 print("Note: Opening stores.json")
                 stores = json.load(f)
@@ -459,19 +459,19 @@ if __name__ == '__main__':
             # If it is, we will download a new version
             if(stores['AsOfDate'] < (time.time() - (60 * 60 * 24 * 7))):
                 print("Note: Your stores.json file is too old, updating it..")
-                with open('./stores.json', 'wb') as f:
+                with open('/tmp/stores.json', 'wb') as f:
                     f.write(functions.getStores())
 
                 print("Note: Updating stores.json complete")
         except:
             # Our json file isn't what we expected, so we will download a new one.
-            with open('./stores.json', 'wb') as f:
+            with open('/tmp/stores.json', 'wb') as f:
                 f.write(functions.getStores())
 
     else:
         # We have no stores.json file, so we wil download it
         print("Note: No stores.json found, creating it for you.")
-        with open('./stores.json', 'wb') as f:
+        with open('/tmp/stores.json', 'wb') as f:
             f.write(functions.getStores())
 
     # Check if the autolock.ini file exists, if it doesn't create it.
