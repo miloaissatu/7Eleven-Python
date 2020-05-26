@@ -243,9 +243,10 @@ def getStores():
     return response.content
 
 def getStoreAddress(storePostcode):
-    # Open the stores.json file and read it as a JSON file
-    with open('/tmp/stores.json', 'r') as f:
-        stores = json.load(f)
+    # # Open the stores.json file and read it as a JSON file
+    # with open('/tmp/stores.json', 'r') as f:
+    #     stores = json.load(f)
+    stores=json.loads(getStores())
 
     # For each store in "Diffs" read the postcode
     for store in stores['Diffs']:

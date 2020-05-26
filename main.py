@@ -461,11 +461,11 @@ def lockin():
 
 if __name__ == '__main__':
     # We have no stores.json file, so we wil download it
-    print("Note: No stores.json found, creating it for you.")
-    with open('/tmp/stores.json', 'wb') as f:
-        f.write(functions.getStores())
-    with open('/tmp/stores.json', 'r') as f:
-        stores = json.load(f)
+    # print("Note: No stores.json found, creating it for you.")
+    # with open('/tmp/stores.json', 'wb') as f:
+    #     f.write(functions.getStores())
+    # with open('/tmp/stores.json', 'r') as f:
+    #     stores = json.load(f)
     """
     # Check if the autolock.ini file exists, if it doesn't create it.
     if not (os.path.exists("./autolock.ini")):
